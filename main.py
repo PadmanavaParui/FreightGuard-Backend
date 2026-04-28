@@ -1,4 +1,5 @@
 from fastapi import FastAPI#, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 # from pydantic import BaseModel
 import razorpay
 import numpy as np
@@ -7,9 +8,17 @@ import uvicorn
 
 app = FastAPI(title="FreightGuard Escrow Engine")
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials = True,
+    allow_methods = ["*"],
+    allow_headers = ["*"]
+)
+
 USE_MOCK_RAZORPAY = True
 
-# TODO: Drop your Razorpay Test Keys here for the demo
+# our Razorpay Test Keys for the demo
 rzp_client = razorpay.Client(auth=("rzp_test_YOUR_KEY", "YOUR_SECRET"))
 
 LARGE_PENALTY = 999999
