@@ -17,7 +17,7 @@ guaranteed payment.
 ---
 
 ## The Solution:
-FreightGuard is an AIP-first Logistics Escrow Engine.
+FreightGuard is an API-first Logistics Escrow Engine.
 We replace the manual "call-an-agent" model with two layers:
 
 1. **Algorithmic Matching** — Hungarian Algorithm matches pending
